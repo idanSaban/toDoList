@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto';
+    background: #74ebd5;
+    background: linear-gradient(to right, #6EA4BF, #C2EFEB);
+}
+
+#wrapper {
+    display: grid;
+    height: 100vh;
+    justify-content: center;
+    grid-template-areas:". c .";
+    grid-template-rows: 100px auto ;
+    grid-template-columns: 15% 70% 15%;
+    min-width: 450px;
+}
+
+#container {
+    grid-area: c;
+    display: grid;
+    grid-template-areas: "h" "l";
+}
+
+#header {
+    grid-area: h;
+    margin-top: 50px;
+    
+}
+
+h1 {
+    grid-area: h;
+    display: grid;
+    grid-template-areas: "i t p";
+    align-items: center;
+    margin: 0;
+    background: #2980d9;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+#list-container {
+    grid-area: l;
+    box-sizing: border-box;
+}
+
+#input {
+    grid-area: i;
+    display: none;
+}
+
+#list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#todo {
+    grid-area: t;
+    display: grid;
+    justify-content: center
+}
+
+#plus {
+    grid-area: p;
+}
+
+li {
+    
+    color: #2980d9;
+    background: white;
+    height: 40px;
+    line-height: 40px;
+    text-transform: capitalize;
+}
+.li-text{
+    display: inline-block;
+    margin:0;
+
+}
+
+li:nth-child(2n) {
+    background: #f7f7f7;
+}
+
+li span {
+    background: #e74c3c;
+    height: 40px;
+    margin-right: 20px;
+    text-align: center;
+    color: white;
+    width: 0px;
+    display: inline-block;
+    opacity: 0;
+    transition: 0.2s linear;
+}
+
+li:hover span {
+    width: 40px;
+    transition: 0.2s linear;
+    opacity: 1.0;
+}
+
+input {
+    color: #2980d9;
+    font-size: 18px;
+    width: 100%;
+    padding: 13px 13px 13px 20px;
+    box-sizing: border-box;
+    border: 0;
+    background: #f7f7f7;
+    font-style: italic;
+ }
+
+input:focus {
+    background: white;
+    border: 1px solid #2980d9;
+    outline: none;
+}
+
+.completed>.li-text {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.fa-plus {
+    opacity: 0.3;
+    transition: 300ms;
+    float: right;
+}
+
+.fa-plus:hover {
+    transition: 300ms;
+    opacity: 1;
+}
+
+.fa-tasks {
+    margin-right: 7px;
+    grid-area: i;
+}

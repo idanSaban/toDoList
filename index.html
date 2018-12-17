@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Stuff To Do</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="container">
+
+            <div id="header">
+                <h1>
+                    <i class="fas fa-tasks"></i><span id="todo"> To-Do list</span> <span id="plus"><i class="fas fa-plus"></i></span>
+                </h1>
+                <input id="input" type="text" placeholder="What's on your mind?">
+
+            </div>
+            <div id="list-container">
+
+                <ul id="list">
+
+                </ul>
+            </div>
+        </div>
+        <script id="list-template" type="text/x-handlebars-template">
+
+        {{#each list}}
+            <li data-id="{{id}}" {{#if complete}}class="completed" {{/if}}>
+                <span class="remove"><i class="fas fa-trash"></i></span><p class="li-text">{{text}}</p>
+            </li>
+        {{/each}}
+    
+    </script>
+
+        <script src="logic.js"></script>
+        <script src="render.js"></script>
+        <script src="main.js"></script>
+</body>
+
+</html>
